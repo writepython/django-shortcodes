@@ -21,8 +21,7 @@ def parse(value):
         if ' ' in item:
             name, space, args = item.partition(' ')
             args = __parse_args__(args)
-        # If shortcode does not use spaces as a separator, it might use equals
-        # signs.
+        # If shortcode does not use spaces as a separator, it might use equals signs.
         elif '=' in item:
             name, space, args = item.partition('=')
             args = __parse_args__(args)
@@ -32,14 +31,10 @@ def parse(value):
 
         item = re.escape(item)
         try:
-            if cache.get(item):
-                parsed = re.sub(r'\[' + item + r'\]', cache.get(item), parsed)
-            else:
-                module = import_parser('shortcodes.parsers.' + name)
-                function = getattr(module, 'parse')
-                result = function(args)
-                cache.set(item, result, 3600)
-                parsed = re.sub(r'\[' + item + r'\]', result, parsed)
+            module = import_parser('shortcodes.parsers.' + name)
+            function = getattr(module, 'parse')
+            result = function(args)
+            parsed = re.sub(r'\[' + item + r'\]', result, parsed)
         except ImportError:
             pass
 

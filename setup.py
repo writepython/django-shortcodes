@@ -4,13 +4,11 @@ from setuptools import setup
 
 setup(
     name="django-shortcodes",
-    version="0.3.1",
+    version="0.3.2",
     description="WordPress shortcode support for Django",
     author="Mark Steadman",
     author_email="marksteadman@me.com",
-    maintainer="Martey Dodoo",
-    maintainer_email="django-shortcodes@marteydodoo.com",
-    url="https://github.com/martey/django-shortcodes",
+    url="https://github.com/writepython/django-shortcodes",
     license="MIT",
     packages=[
         "shortcodes",

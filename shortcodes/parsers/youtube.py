@@ -3,7 +3,7 @@ from django.conf import settings
 
 
 def parse(kwargs):
-    id = kwargs.get('v')
+    id = kwargs.get('id')
     width = int(kwargs.get(
         'w',
         getattr(settings, 'SHORTCODES_YOUTUBE_WIDTH', 480))
