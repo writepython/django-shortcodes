@@ -16,7 +16,7 @@ def parse(kwargs):
 
     if jquery:
         html = '<a id="yt_{{ id }}"'
-        html += ' href="http://www.youtube.com/watch?v={{ id }}">'
+        html += ' href="https://www.youtube.com/watch?v={{ id }}">'
         html += '<span>Watch the YouTube video</span></a>\n'
         html += '<script type="text/javascript">\n'
         html += '\t$("#yt_{{ id }}").flash(\n'
@@ -30,7 +30,7 @@ def parse(kwargs):
         html += '</script>\n'
     else:
         html = '<object width="{{ width }}" height="{{ height }}">'
-        html += '<param name="movie" value="http://www.youtube.com/v/{{ id }}'
+        html += '<param name="movie" value="https://www.youtube.com/v/{{ id }}'
         html += '&hl=en&fs=1"></param>'
         html += '<param name="allowFullScreen" value="true"></param>'
         html += '<param name="allowscriptaccess" value="always"></param>'
